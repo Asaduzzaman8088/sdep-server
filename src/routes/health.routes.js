@@ -13,7 +13,7 @@ const connectionStates = {
 router.get("/", (_req, res) => {
   res.json({
     status: "ok",
-    service: "ShebaSetu API",
+    service: "SDEP API",
     database: connectionStates[mongoose.connection.readyState] ?? "unknown",
     uptime: Math.round(process.uptime()),
     timestamp: new Date().toISOString(),
