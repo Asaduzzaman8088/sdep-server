@@ -37,7 +37,7 @@ if (!env.isProduction) {
 
 app.get("/", (_req, res) => {
   res.json({
-    name: "ShebaSetu API",
+    name: "SDEP API",
     version: "0.1.0",
     status: "ok",
   });
