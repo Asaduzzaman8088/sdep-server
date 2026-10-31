@@ -6,7 +6,7 @@ async function start() {
   await connectDB();
 
   const server = app.listen(env.port, () => {
-    console.log(`[api] ShebaSetu API listening on http://localhost:${env.port}`);
+    console.log(`[api] SDEP API listening on http://localhost:${env.port}`);
   });
 
   const shutdown = async (signal) => {
