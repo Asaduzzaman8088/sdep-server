@@ -3,6 +3,8 @@
 Express and MongoDB REST API powering the Social Development Events Platform (SDEP).
 
 - **Client Live Site URL:** [https://sdep-client.vercel.app](https://sdep-client.vercel.app)
+- **Client Repository:** [https://github.com/Asaduzzaman8088/sdep-client](https://github.com/Asaduzzaman8088/sdep-client)
+- **Server Repository:** [https://github.com/Asaduzzaman8088/sdep-server](https://github.com/Asaduzzaman8088/sdep-server)
 - **API Base URL:** `http://localhost:5000` (or your deployed server URL)
 
 ---
