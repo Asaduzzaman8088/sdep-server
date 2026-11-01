@@ -1,6 +1,31 @@
 import mongoose from "mongoose";
 import { Event } from "../models/event.model.js";
+import { User } from "../models/user.model.js";
 import { connectDB, disconnectDB } from "./connect.js";
+
+const initialUsers = [
+  {
+    name: "MD ASADUZZAMAN",
+    email: "soponmd6@gmail.com",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80",
+    emailVerified: true,
+    role: "admin",
+  },
+  {
+    name: "Volunteer Organizer",
+    email: "volunteer@sdep.org",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    emailVerified: true,
+    role: "user",
+  },
+  {
+    name: "Community Member",
+    email: "community@sdep.org",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80",
+    emailVerified: true,
+    role: "user",
+  },
+];
 
 const initialEvents = [
   {
@@ -115,6 +140,18 @@ const initialEvents = [
 
 async function seed() {
   await connectDB();
+
+  // 1. Seed users into the "users" collection
+  const userCount = await User.countDocuments();
+  if (userCount === 0) {
+    console.log("[seed] Seeding initial users into MongoDB 'users' collection...");
+    await User.insertMany(initialUsers);
+    console.log(`[seed] Successfully inserted ${initialUsers.length} users into 'users' collection.`);
+  } else {
+    console.log(`[seed] 'users' collection already contains ${userCount} users.`);
+  }
+
+  // 2. Seed events into the "events" collection
   const count = await Event.countDocuments();
   if (count === 0) {
     console.log("[seed] Seeding initial events to MongoDB Atlas...");
