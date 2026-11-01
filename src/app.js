@@ -9,6 +9,7 @@ import eventRouter from "./routes/event.routes.js";
 import healthRouter from "./routes/health.routes.js";
 import myRouter from "./routes/my.routes.js";
 import statsRouter from "./routes/stats.routes.js";
+import userRouter from "./routes/user.routes.js";
 
 const app = express();
 
@@ -47,6 +48,7 @@ app.use("/api/health", healthRouter);
 app.use("/api/events", eventRouter);
 app.use("/api/my", myRouter);
 app.use("/api/stats", statsRouter);
+app.use("/api/users", userRouter);
 
 app.use(notFound);
 app.use(errorHandler);
