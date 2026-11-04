@@ -13,6 +13,7 @@ const jwks = createRemoteJWKSet(jwksUrl, {
 const verifyOptions = {
   issuer: env.betterAuthUrl,
   audience: env.betterAuthUrl,
+  algorithms: ["EdDSA"],
 };
 
 function extractBearerToken(req) {

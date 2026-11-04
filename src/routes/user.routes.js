@@ -18,7 +18,7 @@ router.get("/me", requireAuth, async (req, res, next) => {
 });
 
 // GET /api/users - list registered users from MongoDB "users" collection
-router.get("/", async (_req, res, next) => {
+router.get("/", requireAuth, async (_req, res, next) => {
   try {
     const users = await User.find({})
       .select("name email image role createdAt")
