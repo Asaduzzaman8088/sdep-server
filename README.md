@@ -61,7 +61,7 @@ Copy `.env.example` to `.env`:
 ```env
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://sdep:AUBuQaFTI6U0C39W@ac-fdwbtuv-shard-00-00.8d1n9vg.mongodb.net:27017,ac-fdwbtuv-shard-00-01.8d1n9vg.mongodb.net:27017,ac-fdwbtuv-shard-00-02.8d1n9vg.mongodb.net:27017/?ssl=true&replicaSet=atlas-1m1cx9-shard-0&authSource=admin
+MONGODB_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
 DB_NAME=sdep
 CLIENT_URL=http://localhost:3000
 BETTER_AUTH_URL=http://localhost:3000
